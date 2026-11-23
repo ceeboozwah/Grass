@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grass</title>
+<link rel="stylesheet" href="style.css">
+<script type="importmap">
+{ "imports": { "three": "./vendor/three/build/three.module.js" } }
+</script>
+</head>
+<body>
+<canvas id="view"></canvas>
+
+<div id="panel">
+  <h1>Grass</h1>
+  <div class="row"><span>Height</span><output id="o-height"></output></div>
+  <input id="s-height" type="range" min="5" max="70" step="1">
+  <div class="row"><span>Glow</span><output id="o-glow"></output></div>
+  <input id="s-glow" type="range" min="0" max="200" step="1">
+  <div class="row"><span>Gradient</span><output id="o-grad"></output></div>
+  <input id="s-grad" type="range" min="0" max="100" step="1">
+  <div class="row"><span>Gradient shift</span><output id="o-bias"></output></div>
+  <input id="s-bias" type="range" min="-100" max="100" step="1">
+  <div class="row"><span>Wind</span><output id="o-wind"></output></div>
+  <input id="s-wind" type="range" min="0" max="200" step="1">
+  <div class="colors">
+    <label>Root<input id="c-root" type="color"></label>
+    <label>Middle<input id="c-mid" type="color"></label>
+    <label>Tip<input id="c-tip" type="color"></label>
+  </div>
+  <div class="presets" id="presets"></div>
+
+  <h2>Mowing</h2>
+  <div class="row"><span>Cut height</span><output id="o-deck"></output></div>
+  <input id="s-deck" type="range" min="20" max="120" step="1">
+  <div class="seg"><button id="b-regrow">Regrow lawn</button></div>
+
+  <h2>World</h2>
+  <div class="row"><span>Time of day</span><output id="o-sun"></output></div>
+  <input id="s-sun" type="range" min="3" max="97" step="1">
+  <div class="row"><span>Grass density</span><output id="o-dens"></output></div>
+  <input id="s-dens" type="range" min="20" max="100" step="1">
+
+  <p class="hint">Drag to mow &middot; right-drag or shift-drag to orbit &middot; scroll to zoom &middot; <kbd>H</kbd> hides this panel</p>
+</div>
+
+<script type="module" src="src/main.js"></script>
+</body>
+</html>
